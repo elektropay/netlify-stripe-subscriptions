@@ -1,4 +1,4 @@
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const stripe = require('stripe')(process.env.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);
 const { faunaFetch } = require('./utils/fauna');
 
 exports.handler = async (event) => {
@@ -10,7 +10,7 @@ exports.handler = async (event) => {
   // subscribe the new customer to the free plan
   await stripe.subscriptions.create({
     customer: customer.id,
-    items: [{ price: process.env.STRIPE_DEFAULT_PRICE_PLAN }],
+    items: [{ price: process.env.price_1HoycsILEHQPRWpOdogBUwgt }],
   });
 
   // store the Netlify and Stripe IDs in Fauna
