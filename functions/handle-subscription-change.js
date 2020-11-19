@@ -8,7 +8,7 @@ exports.handler = async ({ body, headers }, context) => {
     const stripeEvent = stripe.webhooks.constructEvent(
       body,
       headers['stripe-signature'],
-      process.env.STRIPE_WEBHOOK_SECRET,
+      process.env.whsec_ODdjRWWBUhcO6VXyRivG16qgxBr5Mz6d,
     );
 
     // bail if this is not a subscription update event
